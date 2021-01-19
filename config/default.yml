@@ -140,6 +140,13 @@ redis:
       enabled: true
       type: integer
       metric: gauge
+  tags:
+    - heroku_name: source
+      datadog_name: source
+      type: string
+    - heroku_name: addon
+      datadog_name: addon
+      type: string
 
 postgres:
   metrics:
@@ -218,3 +225,10 @@ postgres:
       enabled: true
       type: float
       metric: gauge
+  tags:
+    - heroku_name: source
+      datadog_name: source
+      type: string
+    - heroku_name: addon
+      datadog_name: addon
+      type: string
