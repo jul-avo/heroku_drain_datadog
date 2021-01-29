@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "time"
 require "heroku_drain_datadog/log_entry"
 
@@ -67,10 +69,19 @@ module HerokuDrainDatadog
       tokens.reduce({}) do |data, token|
         key, value = token.split(ASSIGN_CHAR)
         if key && value
-          data.merge(key => value)
+          data.merge!(key => extract_value(key, value))
         else
           data
         end
+      end
+    end
+
+    def extract_value(key, raw_value)
+      if key == "fwd"
+        # "1.2.3.4,5.6.7.8" -> ['1.2.3.4', '5.6.7.8']
+        raw_value[1..-2].split(",")
+      else
+        raw_value
       end
     end
   end

@@ -43,7 +43,7 @@ RSpec.describe HerokuDrainDatadog::Parser do
         "path" => %q{"/assets/admin-62f13e9f7cb78a2b3e436feaedd07fd67b74cce818f3bb7cfdab1e1c05dc2f89.css"},
         "host" => "app.fivegoodfriends.com.au",
         "request_id" => "bef7f609-eceb-4684-90ce-c249e6843112",
-        "fwd" => %q{"58.6.203.42,54.239.202.42"},
+        "fwd" => %w[58.6.203.42 54.239.202.42],
         "dyno" => "web.1",
         "connect" => "0ms",
         "service" => "2ms",
