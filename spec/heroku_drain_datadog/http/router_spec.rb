@@ -82,11 +82,11 @@ RSpec.describe HerokuDrainDatadog::HTTP::Router do
           end
 
           it "sends a histogram for connect" do
-            expect(socket.buffer[0]).to eq("heroku.router.connect:0.0|h|#source:web.1,dynotype:web,method:GET,path:/assets/admin-62f13e9f7cb78a2b3e436feaedd07fd67b74cce818f3bb7cfdab1e1c05dc2f89.css,status:304")
+            expect(socket.buffer[0]).to eq("heroku.router.connect:0.0|h|#source:web.1,dynotype:web,method:GET,path:/assets/admin-62f13e9f7cb78a2b3e436feaedd07fd67b74cce818f3bb7cfdab1e1c05dc2f89.css,status:304,ip:58.6.203.42")
           end
 
           it "sends a histogram for service" do
-            expect(socket.buffer[1]).to eq("heroku.router.service:2.0|h|#source:web.1,dynotype:web,method:GET,path:/assets/admin-62f13e9f7cb78a2b3e436feaedd07fd67b74cce818f3bb7cfdab1e1c05dc2f89.css,status:304")
+            expect(socket.buffer[1]).to eq("heroku.router.service:2.0|h|#source:web.1,dynotype:web,method:GET,path:/assets/admin-62f13e9f7cb78a2b3e436feaedd07fd67b74cce818f3bb7cfdab1e1c05dc2f89.css,status:304,ip:58.6.203.42")
           end
 
           it "increments drain" do

@@ -17,6 +17,8 @@ module HerokuDrainDatadog
           value.to_s.tr("\"", "")
         when :Source2DynoType
           value.split(".").first
+        when :string_array_first
+          value.first
         end
       end
     end
