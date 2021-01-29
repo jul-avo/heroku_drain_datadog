@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "roda"
 require "heroku_drain_datadog/http/log_controller"
 require "rack/request_counter"

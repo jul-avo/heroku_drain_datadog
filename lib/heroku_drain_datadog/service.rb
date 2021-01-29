@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "heroku_drain_datadog/service/metric"
 require "heroku_drain_datadog/service/tag"
 

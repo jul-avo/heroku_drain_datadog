@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "yaml"
 require "heroku_drain_datadog/service"
 
