@@ -17,7 +17,7 @@ module HerokuDrainDatadog
           metrics: extract_metrics(service_options),
           tags: extract_tags(service_options)
         )
-        services.merge(service_name.to_sym => service)
+        services.merge!(service_name.to_sym => service)
       end
     end
 
